@@ -1,0 +1,39 @@
+{
+  "name": "portfolio-2016",
+  "version": "1.0.0",
+  "description": "new portfolio",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --content-base build/",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "isotope"
+  ],
+  "author": "Daisy Smith",
+  "devDependencies": {
+    "babel-core": "^5.8.24",
+    "babel-loader": "^5.3.2",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.11"
+  },
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "css-loader": "^0.23.1",
+    "history": "^2.0.0-rc2",
+    "imports-loader": "^0.6.5",
+    "isotope-layout": "^2.2.2",
+    "jquery": "^2.2.0",
+    "react": "^0.14.3",
+    "react-router": "^2.0.0-rc5",
+    "style-loader": "^0.13.0",
+    "webpack-dev-server": "^1.14.0"
+  }
+}
