@@ -29,6 +29,7 @@ const Project = React.createClass({
         currentProjects: current
       });
     });
+    console.log('in the portfolio')
   },
 
   render() {
