@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import './index.scss';
 
 const Project = React.createClass({
 
@@ -34,12 +35,30 @@ const Project = React.createClass({
 
   render() {
   	var currentProject = this.state.currentProjects || [];
+    var images = currentProject.image || [];
     console.log(currentProject);
     return (
       <div>
-        <h2>{currentProject.title}</h2>
-        <h2>{currentProject.id}</h2>
-        <h2>{currentProject.date}</h2>
+        <Link to='/portfolio'>Back</Link>
+        <div className="main-info">
+            <h2>{currentProject.title}</h2>
+            <h2>{currentProject.id}</h2>
+            <h3>{currentProject.date}</h3>
+          <div className="content-section">
+            <p>{currentProject.content}</p>
+            <div className="small-details">
+              <p>Built with: </p>
+              <p>{currentProject.filterTags}</p>
+            </div>
+          </div>
+
+          <div className="content-section">
+            {images.map(function(result) {
+              return <img src={result} />;
+                      
+            })}
+          </div>
+        </div>
       </div>
     )
   }

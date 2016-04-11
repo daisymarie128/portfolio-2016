@@ -13,6 +13,11 @@ const Skills = React.createClass({
 
 	componentDidMount() {
 
+		// hange the side quote depending on the page
+    // i am so annoyed at react
+    var sideQuote = document.getElementsByClassName('side-quote-text')[0];
+    sideQuote.innerHTML = "collection of things i do when my friends don't want to hang out with me";
+
 		var _this = this;
 	  d3.json('../data/skills.json', function(d){
 	    _this.setState({skills: d});
@@ -28,7 +33,6 @@ const Skills = React.createClass({
 		var skills = this.state.skills || []
 		console.log('skills', skills)
 		return <div>
-			<h1>skills</h1>
 			<div className="skills-grid">
 				{skills.map(skill => 
 					<Link to={`/skills/${skill.id}`}>

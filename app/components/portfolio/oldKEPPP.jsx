@@ -37,11 +37,6 @@ const Projects = React.createClass({
 
 	},
 
-	generateRandomNumber() {
-		var number = Math.floor(Math.random() * 3);
-		return number;
-	},
-
 	componentDidUpdate(prevProps, prevState) {
 			// need to force isotope to reload after the items have been rendered
 			// react sucks.
@@ -72,7 +67,9 @@ const Projects = React.createClass({
 	},
 
 	render() {
-		const projects = this.state.projects || [];
+		const projects = this.state.projects || []
+
+	
 		return <div className="">
 			<div id="filters" className="filters-button-group">
 		      <div className="filter all selected" onClick={this.filter.bind(this, '*')}>show all</div>
@@ -84,23 +81,18 @@ const Projects = React.createClass({
 			<div className="grid">
 
 				
-			{projects.map(t => {
-				var string = t.content;
-				var maxLength = 70; // maximum number of characters to extract
-
-				//trim the string to the maximum length
-				var trimmedString = string.substr(0, maxLength);
-
-				//re-trim if we are in the middle of a word
-				trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
-					var bgImage = 'url(/assets/shape-' + this.generateRandomNumber() + '.svg)';
-					return [<Link to={`/portfolio/${t.id}`} className={"element-item " + t.filterTags} key={t.id}>
-							<h1>{'—' + t.title}</h1>
-							<p>{trimmedString}</p>
+			{projects.map(t => 
+					[<Link to={`/portfolio/${t.id}`} >
+						<div className={"element-item " + t.filterTags} key={t.id}>
+							<h1>{t.title}</h1>
+							<h2>{t.date}</h2>
+						</div>
 					</Link>, 
-					<Link to={`/portfolio/${t.id}`} style={{backgroundImage: bgImage}} className={"element-item shape " + t.filterTags} >
+					<Link to={`/portfolio/${t.id}`} >
+						<div className={" shape " + t.filterTags} key={t.id}>
+						</div>
 					</Link>]
-			})}
+			)}
 
 			</div>
 				

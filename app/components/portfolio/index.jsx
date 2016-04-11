@@ -16,7 +16,6 @@ const Portfolio = React.createClass({
 	},
 	render() {
 		return <div>
-			<h1>PORTFOLIO</h1>
 			<div>{this.props.children}</div>
 		</div>
 	}

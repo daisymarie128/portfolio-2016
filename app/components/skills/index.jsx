@@ -17,7 +17,6 @@ const Skills = React.createClass({
 	render() {
 		const skills = this.state.skills || []
 		return <div>
-			<h1>skills</h1>
 			<div>{this.props.children}</div>
 		</div>
 	}

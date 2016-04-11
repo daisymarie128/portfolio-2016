@@ -16,12 +16,11 @@ import './index.scss';
 
 const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 
+// var theQuote = 'yep, i needed a whole new page to show you this';
 const App = React.createClass({
   getInitialState() {
       return {
-        projects: null,
-        currentProject: null,
-        skills: null
+        quote: 'theQuote'
       };
   },
 
@@ -47,12 +46,17 @@ const App = React.createClass({
   // },
 
   render() {
+    console.log('this', this)
     return (
       <div className="wrapper">
+      <div className="loading-bar"></div>
         <Header />
         <div className="content">
           {this.props.children}
           </div>
+        <div className="side-quote">
+          <p className="side-quote-text">"yep, i needed a whole new page to show you this"</p>
+        </div>
       </div>
     )
   }
