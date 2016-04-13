@@ -3,19 +3,69 @@
 	width: 100%;
 	font-weight: 700;
 	text-transform: uppercase;
-	margin: 3rem 0rem;
+	margin-bottom: 3rem;
 	font-size: 1rem;
 	font-family: 'Quicksand', sans-serif !important;
+	position: fixed;
+	background: white;
+	z-index: 5;
 
 	ul {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+		padding: 0;
 		li {
 			width: auto;
 			list-style: none;
 			padding: 0.5rem 2rem;
+
+			&.menu-icon {
+				display: block;
+				position: absolute;
+			}
+
+			// TODO: this is so long winded i will fix later
+			// this change sthe color stroke on the selected page
+	    &:nth-of-type(2) {
+	    	a {
+		    	&:hover, &.selected {
+			    	&:after {
+		    		background-image: url("/assets/hover-dash.png");
+			    	}
+		    	}
+	    	}
+
+	    }
+	    &:nth-of-type(3) {
+	    	a {
+		    	&:hover, &.selected {
+			    	&:after {
+		    		background-image: url("/assets/hover-dash-blue.svg");
+			    	}
+		    	}
+	    	}
+
+	    }
+	    &:nth-of-type(4) {
+	    	a {
+		    	&:hover, &.selected {
+			    	&:after {
+		    		background-image: url("/assets/hover-dash.png");
+			    	}
+		    	}
+	    	}
+	    }
+	    &:nth-of-type(5) {
+	    	a {
+		    	&:hover, &.selected {
+			    	&:after {
+		    		background-image: url("/assets/hover-dash-green.svg");
+			    	}
+		    	}
+	    	}
+	    }
 		}
 	}
 
@@ -25,7 +75,7 @@
 		text-decoration: none;
 		position: relative;
 
-		&:hover {
+		&:hover, &.selected {
 			&:after {
 		    content: ' ';
 		    position: absolute;
@@ -36,8 +86,8 @@
 		    background-position: right;
 		    background-size: contain;
 		    background-repeat: no-repeat;
-		    background-image: url("/assets/hover-dash.png");
 			}
 		}
 	}
+
 }

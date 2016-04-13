@@ -1,12 +1,10 @@
 .about-wrapper {
 	width: 100%;
 	margin: auto;
-	// padding: 5%;
 	p {
 		margin: 0 0 35px 15px;
 		width: 60%;
 		margin-right: 2%;
-		// background-color: blue;
 	}
 
 
@@ -50,9 +48,18 @@
 			bottom: 0;
 			background: dodgerblue;
 		}
+
+		.about-toggle {
+			&:hover {
+				-webkit-animation: pulse 2.8s infinite; /* Safari 4+ */
+				-moz-animation:    pulse 2.8s infinite; /* Fx 5+ */
+				-o-animation:      pulse 2.8s infinite; /* Opera 12+ */
+				animation:         pulse 2.8s infinite; /* IE 10+, Fx 29+ */
+			}
+		}
 	}
 
-	.long-facts-title, .quick-facts-title, .skill-set-title {
+	.long-facts-title, .quick-facts-title, .skill-set-title, .contact-title {
 		width: auto;
 		margin-bottom: 5%;
 		display: inline-block;
@@ -77,15 +84,13 @@
 	}
 
 	.quick-facts, .skill-set {
-		// width: 100%;
 		p {
 			display: block;
-			// margin: 0 0 35px 15px;
-			// width: 100%;
 		}
 	}
 }
 
+// roatates the titles on hover
 @-webkit-keyframes rotate-title {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(20deg); }
@@ -104,10 +109,46 @@
 }
 
 
+// pulsates the toggle to make it look clickable
+@-webkit-keyframes pulse {
+  0%   { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+@-moz-keyframes pulse {
+  0%   { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+@-o-keyframes pulse {
+  0%   { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+
 
 
 @media screen and (min-width: 750px) {
 	.about-wrapper {
+		h3 {
+			display: inline-block;
+	    margin-top: 45px;
+	    vertical-align: top;
+	    text-align: center;
+	    text-transform: uppercase;
+		}
+
+		img {
+			display: inline-block;
+			width: 50%;
+		}
+
 		p {
 		    width: 75%;
 		}
@@ -121,6 +162,7 @@
 				display: block;
 			}
 		}
+
 	}
 };
 
@@ -129,7 +171,6 @@
 	.about-wrapper {
 		p {
 		    width: 30%;
-		    // background-color: pink;
 		}
 
 		.skill-set, .quick-facts {

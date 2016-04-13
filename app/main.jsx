@@ -29,24 +29,16 @@ const App = React.createClass({
     d3.json('../data/skills.json', function(d){
       _this.setState({skills: d});
     });
-
-
-
-    // var _this = this;
-    // d3.json('../data/projects.json', function(d){
-    //   _this.setState({projects: d});
-    // })
   },
 
-  // componentDidUpdate(prevProps, prevState) {
-  //     console.log('STATE', this.state)
-      
-  //     projects = this.state.projects
-  //     console.log('PROJECTS', projects)  
-  // },
+  handleClick() {
+    
+  },
+
+  routerWillLeave() {
+  },
 
   render() {
-    console.log('this', this)
     return (
       <div className="wrapper">
       <div className="loading-bar"></div>
@@ -67,7 +59,7 @@ const App = React.createClass({
 render((
   <Router history={appHistory}>
     <Route path="/" component={App}>
-      <Route path="about" component={About} />
+      <Route path="about" component={About} onEnter={App.routerWillLeave}/>
       <Route path="portfolio" component={Portfolio}>
         <IndexRoute component={ProjectsCollection}/>
         <Route path="/portfolio/:projectId" component={Project}/>

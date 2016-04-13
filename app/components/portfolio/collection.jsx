@@ -19,6 +19,12 @@ const Projects = React.createClass({
 	},
 
 	componentDidMount() {
+
+		// set style for the side quote
+		var sideElement = document.getElementsByClassName('side-quote')[0];
+		var contentElement = document.getElementsByClassName('content')[0];
+		sideElement.classList.add('projects-page');
+		contentElement.classList.add('projects-page');
 		
 		var filtersElem = document.getElementsByClassName('filter')[0];
 
@@ -76,27 +82,34 @@ const Projects = React.createClass({
 		return <div className="">
 			<div id="filters" className="filters-button-group">
 		      <div className="filter all selected" onClick={this.filter.bind(this, '*')}>show all</div>
-		      <div className="filter .web" onClick={this.filter.bind(this, '.web')}>Web Development</div>
-		      <div className="filter .design" onClick={this.filter.bind(this, '.design')}>Design</div>
-		      <div className="filter .javascript" onClick={this.filter.bind(this, '.javascript')}>javascript</div>
-		      <div className="filter .illustrator" onClick={this.filter.bind(this, '.illustrator')}>illustrator</div>
+		      <div className="filter .code" onClick={this.filter.bind(this, '.code')}>code</div>
+		      <div className="filter .design" onClick={this.filter.bind(this, '.design')}>design</div>
+		      <div className="filter .animation" onClick={this.filter.bind(this, '.animation')}>animation</div>
+		      <br/>
+		      <div className="filter .javascript small-filter" onClick={this.filter.bind(this, '.javascript')}>javascript</div>
+		      <div className="filter .rails small-filter" onClick={this.filter.bind(this, '.rails')}>rails</div>
+		      <div className="filter .frameworks small-filter" onClick={this.filter.bind(this, '.frameworks')}>frameworks</div>
+		      <div className="filter .threejs small-filter" onClick={this.filter.bind(this, '.threejs')}>threejs</div>
+		      <div className="filter .datavis small-filter" onClick={this.filter.bind(this, '.datavis')}>datavis</div>
+		      <div className="filter .illustrator small-filter" onClick={this.filter.bind(this, '.illustrator')}>illustrator</div>
+		      <div className="filter .ux/ui small-filter" onClick={this.filter.bind(this, '.ux/ui')}>ux/ui</div>
 		    </div>
 			<div className="grid">
 
 				
 			{projects.map(t => {
-				var string = t.content;
-				var maxLength = 70; // maximum number of characters to extract
+				// var string = t.content;
+				// var maxLength = 70; // maximum number of characters to extract
 
-				//trim the string to the maximum length
-				var trimmedString = string.substr(0, maxLength);
+				// //trim the string to the maximum length
+				// var trimmedString = string.substr(0, maxLength);
 
-				//re-trim if we are in the middle of a word
-				trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+				// //re-trim if we are in the middle of a word
+				// trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
 					var bgImage = 'url(/assets/shape-' + this.generateRandomNumber() + '.svg)';
 					return [<Link to={`/portfolio/${t.id}`} className={"element-item " + t.filterTags} key={t.id}>
-							<h1>{'—' + t.title}</h1>
-							<p>{trimmedString}</p>
+							<h1>{t.title}</h1>
+							<p>{t.content}</p>
 					</Link>, 
 					<Link to={`/portfolio/${t.id}`} style={{backgroundImage: bgImage}} className={"element-item shape " + t.filterTags} >
 					</Link>]
