@@ -3,7 +3,14 @@ import './index.scss';
 
 let About = React.createClass({ 
 
+  getInitialState() {
+      return {
+          bubbles: false
+      };
+  },
+
   componentDidMount() {
+
 
     // change the side quote depending on the page
     // i am so annoyed at react
@@ -26,6 +33,12 @@ let About = React.createClass({
 
   },
 
+  changeBubble() {
+    this.setState({
+      bubbles: !this.state.bubbles
+    })
+  },
+
   render() {
     console.log('hello')
     return <div className="about-wrapper">
@@ -34,30 +47,39 @@ let About = React.createClass({
         <div className="my-name">DAISY MARIE SMITH —</div>
         <div className="what-i-want"></div>
       	<div className="long-facts-title" onMouseOver={this.changeOnHover.bind(this, 'A bit of<br/>back<br/>story' )} onMouseOut={this.changeOnMouseOut.bind(this, 'long<br/>boring<br/>facts' )}>long<br/>boring<br/>facts</div>
-      		<p>I'm extremley passionate about programming, design and innovative ideas. In 2014 I completed the Web Development Immersive course at General Assembly. In 2012 I completed a bachelor of Communication Design and specialised in Digital Media and animation. I'm experienced in many different program.</p>
+      		<p>I'm a <strong>creative developer</strong>, with a background in animation, 3D and design. I'm extremly passionate about creativity, innovative ideas and the mix of art and technology, and I am always on the look out for the next thing I can learn. I have previously worked at <strong>Arup</strong> in their digital team and have most recently worked in <strong>Google Creative Lab Sydney.</strong> 
+            In my own time I like to play with different ways of making animations and graphics with code, in particular webGL and threejs. I always enjoy learning new languages and tools and am always <strong>eager to learn</strong> something new. 
+            I am looking for a role which will allow me to continue to expand my skills and knowledge, in the field of creative technologies. I am also interested in learning more about mobile developement and love working in a challenging environment.</p>
         <div className="skill-set">
-        	<div className="skill-set-title" onMouseOver={this.changeOnHover.bind(this, 'meow meow meow' )} onMouseOut={this.changeOnMouseOut.bind(this, 'quick facts' )}>skill set</div>
-      		<p>Adobe Suite inparticular PS, Illustrator, After Effects, Flash, ID, AutoDesk Maya and Mudbox, Cinema4D, FinalCut pro + more.</p>
-      	</div>
-        <div className="quick-facts">
-        	<div className="quick-facts-title" onMouseOver={this.changeOnHover.bind(this, 'meow meow meow' )} onMouseOut={this.changeOnMouseOut.bind(this, 'quick facts' )}>quick facts</div>
-      		<p>Im a 20 something year old web developer and i’m as short as 7year old
-        		I love code and i love design
-        		I hate birds
-        		I dont get that much more interesting</p>
-      	</div>
+          <div className="skill-set-title" onMouseOver={this.changeOnHover.bind(this, 'meow meow meow' )} onMouseOut={this.changeOnMouseOut.bind(this, 'skill set' )}>skill set</div>
+          <p>
+            Javascript<br/>
+            Angular<br/>
+            React<br/>
+            SCSS<br/>
+            Threejs<br/>
+            WebGL<br/>
+            D3<br/>
+            Rails<br/>
+            Ruby<br/>
+            Adobe CC Suite<br/>
+            AutoDesk Maya<br/>
+            Cinema4D<br/>
+          </p>
+        </div>
       </div>
       <div className="section">
-        <h3 className="about-toggle">Am i what<br/>youre looking for?</h3>
-        <img src="/assets/about-circles-1.svg" />
+        <h3 className="about-toggle" onClick={this.changeBubble}> { this.state.bubbles ? "Am i what you're looking for?" : "Are you what im looking for?" }</h3>
+        <img src={this.state.bubbles ? "/assets/about-circles-1.svg" : "/assets/dot.svg"} />
       </div>
       <div className="section">
       	<div className="contact-title">Drop me a line</div>
       	<div className="contact">
       		<ul>
-      			<li>Email</li>
-      			<li>Linkdn</li>
-      			<li>GitHub</li>
+      			<li>daisymarie128@gmail.com</li>
+            <li><a href="https://twitter.com/daisysmells" target="_blank">@daisysmells</a></li>
+      			<li><a href="https://au.linkedin.com/in/daisysmith" target="_blank">Linkedin</a></li>
+      			<li><a href="https://github.com/daisymarie128" target="_blank">GitHub</a></li>
       		</ul>
       	</div>
       </div>

@@ -30,25 +30,28 @@ const Project = React.createClass({
         currentProjects: current
       });
     });
-    console.log('in the portfolio')
   },
 
   render() {
   	var currentProject = this.state.currentProjects || [];
     var images = currentProject.image || [];
-    console.log(currentProject);
+    var tags = currentProject.tagList || [];
+    console.log(images);
+    console.log(tags);
     return (
       <div>
-        <Link to='/portfolio'>Back</Link>
         <div className="main-info">
-            <h2>{currentProject.title}</h2>
-            <h2>{currentProject.id}</h2>
-            <h3>{currentProject.date}</h3>
+            <Link to='/portfolio' className="back">Back</Link><br/>
+            <h2>{currentProject.title}</h2><br/>
+            <h2>{currentProject.date}</h2><br/>
+            <h2><a href={currentProject.projectLink} target="_blank">{currentProject.projectLink}</a></h2>
           <div className="content-section">
             <p>{currentProject.content}</p>
             <div className="small-details">
               <p>Built with: </p>
-              <p>{currentProject.filterTags}</p>
+              {tags.map(function(result) {
+               return <p>{result} <br/> </p>
+              })}
             </div>
           </div>
 

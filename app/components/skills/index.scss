@@ -80,7 +80,8 @@
 	.image-holder {
 		width: 100%;
 		height: 200px;
-		background-size: cover;
+		background-size: contain;
+		background-repeat: no-repeat;
 	}
 
 }
@@ -228,8 +229,7 @@
 		
 		.image-holder {
 			display: inline-block;
-	    width: 48%;
-			height: 130px;
+			// height: 130px;
 			margin-right: 2px;
 		}
 	}

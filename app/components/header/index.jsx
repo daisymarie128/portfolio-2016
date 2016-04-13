@@ -53,7 +53,7 @@ const Header = React.createClass({
     	<ul>
         <li className="menu-icon"></li>
     		<li><Link to="/" className="page-link" onClick={this.handleClick.bind(this, '/')} >Home</Link></li>
-    		<li><Link to="/about" className="page-link" onClick={this.handleClick.bind(this, 'about')} >about</Link></li>
+    		<li><Link to="/about" className="page-link" onClick={this.handleClick.bind(this, 'about')} >stalk</Link></li>
     		<li><Link to="/portfolio" className="page-link" onClick={this.handleClick.bind(this, 'portfolio')} >portfolio</Link></li>
     		<li><Link to="/skills" className="page-link" onClick={this.handleClick.bind(this, 'skills')} >skills</Link></li>
     	</ul>

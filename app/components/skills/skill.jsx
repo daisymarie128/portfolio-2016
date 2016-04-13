@@ -55,7 +55,7 @@ const Skill = React.createClass({
               <div className="number-icon"><strong>{'0' + currentSkill.id}</strong></div>
               <ul>
               <Link to='/skills'>Back</Link>
-                <h3>LINK</h3>
+                <h3><a href={currentSkill.projectLink} target="_blank">CHECK IT OUT HERE</a></h3>
                 {buildTags.map(function(result) {
                     return <li>---- {result}</li>;
                   })}

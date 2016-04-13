@@ -1,10 +1,39 @@
-.about-wrapper {
+
+
+#container .about-wrapper {
 	width: 100%;
 	margin: auto;
+	h3 {
+	    margin-top: 45px;
+	    vertical-align: top;
+	    text-align: center;
+	    text-transform: uppercase;
+		}
+
 	p {
 		margin: 0 0 35px 15px;
 		width: 60%;
 		margin-right: 2%;
+	}
+
+
+	img {
+    width: 90%;
+    margin: auto;
+    display: block;
+	}
+
+	ul {
+		padding: 0;
+		li {
+			display: block;
+			margin: 10px 0;
+			a {
+				&:hover {
+					color: dodgerblue;
+				}
+			}
+		}
 	}
 
 
@@ -39,6 +68,10 @@
 		position: relative;
 		padding-bottom: 110px;
 
+		&:nth-of-type(1) {
+			padding-top: 0;
+		}
+
 		&:after {
 			content: ' ';
 			width: 100%;
@@ -50,6 +83,16 @@
 		}
 
 		.about-toggle {
+			position: relative;
+			width: 138px;
+			margin: auto;
+			&:before {
+				content: '*';
+				position: absolute;
+				left: -10px;
+				top: 0;
+				color: red;
+			}
 			&:hover {
 				-webkit-animation: pulse 2.8s infinite; /* Safari 4+ */
 				-moz-animation:    pulse 2.8s infinite; /* Fx 5+ */
@@ -59,8 +102,8 @@
 		}
 	}
 
-	.long-facts-title, .quick-facts-title, .skill-set-title, .contact-title {
-		width: auto;
+	.long-facts-title, .skill-set-title, .contact-title {
+		width: 110px;
 		margin-bottom: 5%;
 		display: inline-block;
 		vertical-align: top;
@@ -69,7 +112,10 @@
 		text-transform: uppercase;
 		font-size: 1.7rem;
 		font-weight: 700;
+		text-align: center;
+	}
 
+	.long-facts-title, .skill-set-title {
 		&:hover {
 			transform-origin: top left;
 			-webkit-animation: rotate-title 0.8s forwards; /* Safari 4+ */
@@ -79,14 +125,23 @@
 		}
 	}
 
-	.quick-facts-title, .skill-set-title {
+	.skill-set-title {
 		font-size: 1.3rem;
 	}
 
-	.quick-facts, .skill-set {
-		p {
-			display: block;
-		}
+	.contact {
+    width: 50%;
+    display: inline-block;
+    margin-left: 80px;
+
+    ul {
+			margin: 0;
+			li {
+				&:nth-of-type(1) {
+					margin-top: 0;
+				}
+			}
+    }
 	}
 }
 
@@ -135,34 +190,40 @@
 
 
 @media screen and (min-width: 750px) {
-	.about-wrapper {
+	#container .about-wrapper {
 		h3 {
 			display: inline-block;
-	    margin-top: 45px;
-	    vertical-align: top;
-	    text-align: center;
-	    text-transform: uppercase;
+			margin-left: 10%;
 		}
 
 		img {
 			display: inline-block;
 			width: 50%;
+			margin-left: 2%;
 		}
 
 		p {
-		    width: 75%;
-		}
-
-		.skill-set, .quick-facts {
-		  width: 46%;
-			margin-left: 0;
-			display: inline-block;
-			p {
-				// width: 0%;
-				display: block;
+			&:nth-of-type(1) {
+			  width: 50%;
 			}
 		}
+		.section {
+			.about-toggle {
+				width: 138px;
+				margin-top: 40px;
+				margin-left: 10%;
+			}
 
+			.skill-set {
+				margin-left: 20px;
+				display: inline-block;
+			  width: 22%;
+				p {
+					// width: 0%;
+					display: block;
+				}
+			}
+		}
 	}
 };
 

@@ -1,0 +1,13 @@
+#container .footer {
+	position: absolute;
+	bottom: 0;
+	width: 90%;
+	height: 30px;
+	border-top: 1px solid black;
+	margin-left: 5%;
+
+	p {
+		position: absolute;
+		right: 0;
+	}
+}

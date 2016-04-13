@@ -5,6 +5,7 @@ import { createHashHistory } from 'history'
 import { useRouterHistory, Router, IndexRoute, Route, Link } from 'react-router'
 import d3 from 'd3'
 import Header from './components/header/index.jsx';
+import Footer from './components/footer/index.jsx';
 import About from './components/about/index.jsx';
 import Portfolio from './components/portfolio/index.jsx';
 import ProjectsCollection from './components/portfolio/collection.jsx';
@@ -49,6 +50,7 @@ const App = React.createClass({
         <div className="side-quote">
           <p className="side-quote-text">"yep, i needed a whole new page to show you this"</p>
         </div>
+        <Footer />
       </div>
     )
   }

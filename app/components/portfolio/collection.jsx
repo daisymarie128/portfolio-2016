@@ -91,7 +91,6 @@ const Projects = React.createClass({
 		      <div className="filter .frameworks small-filter" onClick={this.filter.bind(this, '.frameworks')}>frameworks</div>
 		      <div className="filter .threejs small-filter" onClick={this.filter.bind(this, '.threejs')}>threejs</div>
 		      <div className="filter .datavis small-filter" onClick={this.filter.bind(this, '.datavis')}>datavis</div>
-		      <div className="filter .illustrator small-filter" onClick={this.filter.bind(this, '.illustrator')}>illustrator</div>
 		      <div className="filter .ux/ui small-filter" onClick={this.filter.bind(this, '.ux/ui')}>ux/ui</div>
 		    </div>
 			<div className="grid">
