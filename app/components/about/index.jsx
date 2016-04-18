@@ -15,7 +15,7 @@ let About = React.createClass({
     // change the side quote depending on the page
     // i am so annoyed at react
     var sideQuote = document.getElementsByClassName('side-quote-text')[0];
-    sideQuote.innerHTML = "this page isn't really worth reading, <br/> just skip to the bottom to get intouch";
+    sideQuote.innerHTML = "If you can't be bothered reading, <br/> just skip to the bottom to get in touch";
 
   },
 
@@ -40,7 +40,6 @@ let About = React.createClass({
   },
 
   render() {
-    console.log('hello')
     return <div className="about-wrapper">
       <div className="section">
         <div className="my-skills"></div>
@@ -69,8 +68,8 @@ let About = React.createClass({
         </div>
       </div>
       <div className="section">
-        <h3 className="about-toggle" onClick={this.changeBubble}> { this.state.bubbles ? "Am i what you're looking for?" : "Are you what im looking for?" }</h3>
-        <img src={this.state.bubbles ? "/assets/about-circles-1.svg" : "/assets/dot.svg"} />
+        <h3 className="about-toggle" onClick={this.changeBubble}> { this.state.bubbles ? "Are you what im looking for?" : "Am i what you're looking for?" }</h3>
+        <img src={this.state.bubbles ? "/assets/about-circles-1.svg" : "/assets/about-circles-2.svg"} />
       </div>
       <div className="section">
       	<div className="contact-title">Drop me a line</div>

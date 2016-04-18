@@ -20,6 +20,8 @@ const Projects = React.createClass({
 
 	componentDidMount() {
 
+		var sideQuote = document.getElementsByClassName('side-quote-text')[0];
+    sideQuote.innerHTML = "Collection of prjects which allow me to afford to feed my kitty cat";
 		// set style for the side quote
 		var sideElement = document.getElementsByClassName('side-quote')[0];
 		var contentElement = document.getElementsByClassName('content')[0];
@@ -91,7 +93,7 @@ const Projects = React.createClass({
 		      <div className="filter .frameworks small-filter" onClick={this.filter.bind(this, '.frameworks')}>frameworks</div>
 		      <div className="filter .threejs small-filter" onClick={this.filter.bind(this, '.threejs')}>threejs</div>
 		      <div className="filter .datavis small-filter" onClick={this.filter.bind(this, '.datavis')}>datavis</div>
-		      <div className="filter .ux/ui small-filter" onClick={this.filter.bind(this, '.ux/ui')}>ux/ui</div>
+		      <div className="filter .ux small-filter" onClick={this.filter.bind(this, '.ux')}>ux/ui</div>
 		    </div>
 			<div className="grid">
 

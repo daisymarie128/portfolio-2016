@@ -18,7 +18,11 @@ var config = {
     {
       test: /\.scss$/,
       loaders: ['style', 'css', 'sass']
-      }]
+    },
+    {
+      test: /\.js$/,
+        loader: 'required'
+    }]
   },
   sassLoader: {
     includePaths: [path.resolve(__dirname, "./app")]

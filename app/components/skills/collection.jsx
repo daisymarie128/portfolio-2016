@@ -40,7 +40,7 @@ const Skills = React.createClass({
 				{skills.map(function(skill) {
 					divStyle.backgroundImage = "url('" + skill.featureImage + "')";
 					return <Link to={`/skills/${skill.id}`}>
-					 <div className="skill-item" style={divStyle} key={skill.id} >
+					 <div className="skill-item" key={skill.id} >
 							<h3>0{skill.id}</h3>
 						</div>
 					</Link>

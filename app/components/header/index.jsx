@@ -4,6 +4,12 @@ import './index.scss';
 
 const Header = React.createClass({ 
 
+  getInitialState() {
+    return {
+        open: false
+    };
+  },
+
   handleClick(location, event) {
     var sideElement = document.getElementsByClassName('side-quote')[0];
     var contentElement = document.getElementsByClassName('content')[0];
@@ -33,7 +39,7 @@ const Header = React.createClass({
       contentElement.classList.remove('projects-page');
     }
 
-    if (location == '/') {
+    if (location == '/home') {
       loadingElement.style.background = "#E83FFF";
       runAnimation();
     } else if (location == 'about') {
@@ -48,14 +54,33 @@ const Header = React.createClass({
     }
   },
 
+  handleMenuClick() {
+    this.setState({
+      open: !this.state.open
+    })
+  },
+
   render() {
     return <div className="header">
     	<ul>
-        <li className="menu-icon"></li>
-    		<li><Link to="/" className="page-link" onClick={this.handleClick.bind(this, '/')} >Home</Link></li>
+      <li className="menu-icon" onClick={this.handleMenuClick}>
+        <div className={this.state.open ? "icon open" : "icon" } >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </li>
+      <div className={this.state.open ? "mobile-menu slide-out" : "mobile-menu" }>
+        <li><Link to="/home" className="page-link" onClick={this.handleMenuClick} >Home</Link></li>
+        <li><Link to="/about" className="page-link" onClick={this.handleMenuClick} >stalk</Link></li>
+        <li><Link to="/portfolio" className="page-link" onClick={this.handleMenuClick} >portfolio</Link></li>
+        <li><Link to="/skills" className="page-link" onClick={this.handleMenuClick} >labs</Link></li>
+      </div>
+
+    		<li><Link to="/home" className="page-link" onClick={this.handleClick.bind(this, '/home')} >Home</Link></li>
     		<li><Link to="/about" className="page-link" onClick={this.handleClick.bind(this, 'about')} >stalk</Link></li>
     		<li><Link to="/portfolio" className="page-link" onClick={this.handleClick.bind(this, 'portfolio')} >portfolio</Link></li>
-    		<li><Link to="/skills" className="page-link" onClick={this.handleClick.bind(this, 'skills')} >skills</Link></li>
+    		<li><Link to="/skills" className="page-link" onClick={this.handleClick.bind(this, 'skills')} >labs</Link></li>
     	</ul>
 
     </div>;

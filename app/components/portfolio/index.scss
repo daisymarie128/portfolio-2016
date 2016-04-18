@@ -116,7 +116,7 @@
 		}
 
 		p {
-			height: 100px;
+			height: 98px;
 			margin-left: 3rem;
 			text-overflow: ellipsis;
 			overflow: hidden;
@@ -135,6 +135,7 @@
 		background: none;
 		cursor: default;
 		background: center no-repeat;
+		background-size: 20%;
 
 		// &:before {
 		// 	content: '';
@@ -293,6 +294,17 @@
 	.grid {
 		a, .shape {
 			width: 30%;
+			background-size: 30%;
+		}
+	}
+};
+
+@media screen and (min-width: 750px) { 
+	.content-section {
+		&:nth-of-type(2) {
+			img {
+		    width: 85%;
+			}
 		}
 	}
 };
@@ -301,14 +313,6 @@
 @media screen and (min-width: 900px) {
 
 };
-
-// @media screen and (max-width: 1024px) {
-
-// };
-
-
-
-
 
 
 
