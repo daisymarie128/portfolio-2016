@@ -153,16 +153,11 @@ const Home = React.createClass({
 		    renderer.setSize( window.innerWidth, window.innerHeight );
 		}
 
-		function counter() {
-		    uniforms.u_time.value -= 0.005;
-		    console.log('reset')
-		}
 		var direction = 'up';
 		function animate() {
 		    if (direction == 'down') {
 		        if (uniforms.u_time.value <= 0) {
 		            direction = 'up';
-		            console.log('go up now')
 		        }
 		        uniforms.u_time.value -= 0.05;
 		    } else if (direction == 'up') {
@@ -190,15 +185,6 @@ const Home = React.createClass({
   },
 
   handleResize() {
-  	// Scene Dimensions
-  	// console.log('resize')
-			// var element = document.getElementsByTagName('body')[0];
-	  //   var sceneWidth = element.offsetWidth;
-	  //   var sceneHeight = element.offsetHeight;
-
-	  //   // RENDERER
-	  //   renderer.setSize(sceneWidth, sceneHeight);
-
 	  renderer.setSize(window.innerWidth, window.innerHeight);
 	  camera.aspect = window.innerWidth / window.innerHeight;
 	  camera.updateProjectionMatrix();

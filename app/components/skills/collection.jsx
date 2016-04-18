@@ -39,8 +39,8 @@ const Skills = React.createClass({
 			<div className="skills-grid">
 				{skills.map(function(skill) {
 					divStyle.backgroundImage = "url('" + skill.featureImage + "')";
-					return <Link to={`/skills/${skill.id}`}>
-					 <div className="skill-item" key={skill.id} >
+					return <Link key={skill.id} to={`/skills/${skill.id}`} >
+					 <div className="skill-item">
 							<h3>0{skill.id}</h3>
 						</div>
 					</Link>

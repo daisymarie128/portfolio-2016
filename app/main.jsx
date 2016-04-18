@@ -39,7 +39,6 @@ import './index.scss';
 
 const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 
-// var theQuote = 'yep, i needed a whole new page to show you this';
 const App = React.createClass({
   getInitialState() {
       return {

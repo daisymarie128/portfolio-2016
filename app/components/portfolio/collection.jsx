@@ -35,13 +35,11 @@ const Projects = React.createClass({
 			layoutMode: 'fitRows'
 		});
 
-		// $.get(this.props.source, function(result) {
-      	var _this = this;
-		    d3.json('../data/projects.json', function(d){
-		      _this.setState({projects: d});
-			    
-		    }) 
-    // }.bind(this));
+  	var _this = this;
+    d3.json('../data/projects.json', function(d){
+      _this.setState({projects: d});
+	    
+    }) 
 
 	},
 
@@ -99,16 +97,8 @@ const Projects = React.createClass({
 
 				
 			{projects.map(t => {
-				// var string = t.content;
-				// var maxLength = 70; // maximum number of characters to extract
-
-				// //trim the string to the maximum length
-				// var trimmedString = string.substr(0, maxLength);
-
-				// //re-trim if we are in the middle of a word
-				// trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
 					var bgImage = 'url(/assets/shape-' + this.generateRandomNumber() + '.svg)';
-					return [<Link to={`/portfolio/${t.id}`} className={"element-item " + t.filterTags} key={t.id}>
+					return [<Link key={t.id} to={`/portfolio/${t.id}`} className={"element-item " + t.filterTags}>
 							<h1>{t.title}</h1>
 							<p>{t.content}</p>
 					</Link>, 
@@ -121,19 +111,5 @@ const Projects = React.createClass({
 		</div>
 	}
 })
-
-			// {projects.map(t => 
-			// 	<div className="element-item" key={t.id}>{t.name}</div>
-			// )}
-
-					// {(() => {
-					// 	if(projects){
-					// 		projects.map(function(project) {
-					// 			return
-					// 			<div className="project">bla</div>
-					// 		})
-					// 	}
-					// })()}
-
 
 export default Projects;

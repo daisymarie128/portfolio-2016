@@ -36,8 +36,6 @@ const Project = React.createClass({
   	var currentProject = this.state.currentProjects || [];
     var images = currentProject.image || [];
     var tags = currentProject.tagList || [];
-    console.log(images);
-    console.log(tags);
     return (
       <div>
         <div className="main-info">
