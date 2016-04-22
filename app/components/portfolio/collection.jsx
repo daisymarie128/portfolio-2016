@@ -21,7 +21,7 @@ const Projects = React.createClass({
 	componentDidMount() {
 
 		var sideQuote = document.getElementsByClassName('side-quote-text')[0];
-    sideQuote.innerHTML = "Collection of prjects which allow me to afford to feed my kitty cat";
+    sideQuote.innerHTML = "Collection of projects which allow me to afford to feed my kitty cat";
 		// set style for the side quote
 		var sideElement = document.getElementsByClassName('side-quote')[0];
 		var contentElement = document.getElementsByClassName('content')[0];

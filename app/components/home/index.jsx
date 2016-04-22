@@ -3,9 +3,15 @@ import {Link} from 'react-router';
 import Header from '../header/index.jsx';
 import './index.scss';
 
-var renderer, camera;
+var renderer, camera, scene, requestId;
 
 const Home = React.createClass({ 
+
+	getInitialState() {
+    return {
+        scene: null,
+    };
+	},
 
   componentDidMount(){
 
@@ -13,16 +19,22 @@ const Home = React.createClass({
 
   	var sideQuote = document.getElementsByClassName('side-quote-text')[0];
     sideQuote.innerHTML = "Daisy Smith Creative Coder";
-   	
+   	this.initThree();
+  	
+
+  },
+
+  initThree() {
 
   	/* ----------------------------
 		threejs code
 		------------------------------------ */
 
+		var self = this;
+
 
 		var container,
-		    scene, 
-		    composer, 
+		    composer,
 		    color, 
 		    geometry,
 		    material,
@@ -37,13 +49,8 @@ const Home = React.createClass({
 		init();
 		animate();
 
-		function updateOptions() {
-		  var wildGlitch = document.getElementById('wildGlitch');
-		  glitchPass.goWild=wildGlitch.checked;
-		}
-
 		function init() {
-		    
+
 		  // set up my sphere coordinates
 		  cooordinates = [
 		    {
@@ -90,7 +97,7 @@ const Home = React.createClass({
 
 		    object = new THREE.Object3D();
 
-		    // this is the amount of spheres we want
+		    // self is the amount of spheres we want
 		    color = new THREE.Color( 0xff0000 );
 		    geometry = new THREE.SphereGeometry( 70, 100, 100 );
 
@@ -174,14 +181,18 @@ const Home = React.createClass({
 		        scene.children[i].rotation.y += 0.005;
 		    };
 
-		    requestAnimationFrame( animate );
+		    requestId = requestAnimationFrame(animate);
 		    render();
 		}
 
 		function render() {
 	    composer.render();
 		}
+  },
 
+  componentWillUnmount() {
+  	cancelAnimationFrame(requestId);
+    // scene.dispose();
   },
 
   handleResize() {

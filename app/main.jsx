@@ -53,7 +53,7 @@ const App = React.createClass({
     console.log("%c Please excuse some of my code ", "background:yellow");
     console.log("%c I built this very quickly and cut a few corners. ", "background:yellow");
     console.log("");
-    console.log("%c Try some code ", "background:dodgerblue; color:white;");
+    console.log("%c Try some code, try calling a function. ", "background:dodgerblue; color:white;");
     console.log("%c A cat says? ", "background:dodgerblue; color:white;");
 
     window.meow = function() {
@@ -62,7 +62,7 @@ const App = React.createClass({
       console.log("");
       console.log("");
       console.log("%c Now try another function: ", "background:rgb(36, 221, 154)");
-      console.log("%c Try calling bribe() and pass in what you think you would need to bribe me with to come work for you. ", "background:rgb(36, 221, 154)");
+      console.log("%c Try calling bribe() and pass in a string of what you think you would need to bribe me with to come work for you. ", "background:rgb(36, 221, 154)");
       console.log("%c Hint read the portfolio. . . it's pretty obvious. ", "background:rgb(36, 221, 154)");
     }
 
@@ -70,7 +70,7 @@ const App = React.createClass({
       var kitten = document.getElementById('kittens').innerHTML;
       var tryAgain = document.getElementById('wrong').innerHTML;
       console.log(something)
-      if (something == "kittens" || something == "cats" || something == "cat" || something == "kitten") {
+      if (something == "kittens" || something == "kitties" || something == "cats" || something == "cat" || something == "kitten" || something == "a lot of cats" || something == "all of the kitties" || something == "so many kitties") {
         console.log('%c THATS A BINGO! ', "background:#E83FFF; color:white");
         console.log(kitten);
         console.log('%c THATS A BINGO! ', "background:#E83FFF; color:white");
