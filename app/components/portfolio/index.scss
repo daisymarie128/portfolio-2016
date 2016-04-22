@@ -45,13 +45,6 @@
 	}
 }
 
-/* clear fix */
-// .grid:after {
-//   content: '';
-//   display: block;
-//   clear: both;
-// }
-
 .grid {
 	overflow-wrap: normal;
 	position: relative;
@@ -63,8 +56,6 @@
 	justify-content: flex-start;
 }
 
-/* ---- .element-item ---- */
-
 .grid {
 	
 	a {
@@ -73,21 +64,13 @@
   height: 180px;
   margin: 5px;
   margin-left: 0px;
-  // padding: 30px;
-  // padding-top: 7rem;
   color: #262524;
   text-decoration: none;
 
   &:hover {
-  	// transform: perspective(200px) rotateY(25deg);
   	animation: tilt-effect forwards 1s;
   }
 
-  // flex: 1 1 auto;
- //   > * {
-	//   margin: 0;
-	//   padding: 0;
-	// }
 
 		h1, h2{
 			margin: 0;
@@ -97,13 +80,13 @@
 			font-size: 2rem;
 			text-transform: uppercase;
 			position: relative;
-			padding: 0 10px;
+			padding: 0 2rem;
 			line-height: 2.7rem;
 
 			&:before {
 				content: ' ';
 				position: absolute;
-				left: -20px;
+				left: -5px;
 				top: 43%;
 				width: 20px;
 				height: 4px;
