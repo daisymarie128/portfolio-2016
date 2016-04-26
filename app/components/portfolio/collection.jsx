@@ -82,9 +82,9 @@ const Projects = React.createClass({
 		return <div className="">
 			<div id="filters" className="filters-button-group">
 		      <div className="filter all selected" onClick={this.filter.bind(this, '*')}>show all</div>
-		      <div className="filter .code" onClick={this.filter.bind(this, '.code')}>code</div>
 		      <div className="filter .design" onClick={this.filter.bind(this, '.design')}>design</div>
 		      <div className="filter .animation" onClick={this.filter.bind(this, '.animation')}>animation</div>
+		      <div className="filter .code" onClick={this.filter.bind(this, '.code')}>code</div>
 		      <br/>
 		      <div className="filter .javascript small-filter" onClick={this.filter.bind(this, '.javascript')}>javascript</div>
 		      <div className="filter .rails small-filter" onClick={this.filter.bind(this, '.rails')}>rails</div>
