@@ -25,7 +25,7 @@ const Skill = React.createClass({
     _this.setState({skillId: index});
     d3.json('../data/skills.json', function(d){
       _this.setState({skills: d});
-      
+
       const skills = _this.state.skills || []
       var hello = _this.state.skillId - 1
       current = skills[hello]
@@ -54,13 +54,14 @@ const Skill = React.createClass({
             <div className="section">
               <div className="number-icon"><strong>{'0' + currentSkill.id}</strong></div>
               <ul>
+							<p>{currentSkill.date}</p>
               <Link to='/skills'>Back</Link>
                 <h3><a href={currentSkill.projectLink} target="_blank">CHECK IT OUT HERE</a></h3>
                 {buildTags.map(function(result) {
                     return <li>---- {result}</li>;
                   })}
               </ul>
-            
+
             </div>
             <div className="section">
               {images.map(function(result) {

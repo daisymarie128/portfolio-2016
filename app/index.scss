@@ -76,11 +76,16 @@ html, body {
   position: absolute;
   top: 120px;
   padding: 15px;
+	h1 {
+		font-weight: 300;
+    font-size: 1.2rem;
+    font-family: Courier New;
+	}
 }
 
 
 
-/* ----------- 
+/* -----------
 	ANIMAITIONS :
 ----------- */
 @-webkit-keyframes grow {
@@ -133,7 +138,7 @@ html, body {
 	    transform-origin: top right;
 	    transform: rotate(90deg) translateX(50%);
 		}
-	
+
 		&.projects-page {
 	    left: 65px;
 		  top: 80%;

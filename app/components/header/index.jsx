@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import './index.scss';
 
-const Header = React.createClass({ 
+const Header = React.createClass({
 
   getInitialState() {
     return {
@@ -61,7 +61,7 @@ const Header = React.createClass({
   },
 
   render() {
-    return <div className="header">
+    return <header className="header">
     	<ul>
       <li className="menu-icon" onClick={this.handleMenuClick}>
         <div className={this.state.open ? "icon open" : "icon" } >
@@ -72,21 +72,19 @@ const Header = React.createClass({
       </li>
       <div className={this.state.open ? "mobile-menu slide-out" : "mobile-menu" }>
         <li><Link to="/home" className="page-link" onClick={this.handleMenuClick} >Home</Link></li>
-        <li><Link to="/about" className="page-link" onClick={this.handleMenuClick} >stalk</Link></li>
+        <li><Link to="/about" className="page-link" onClick={this.handleMenuClick} >Info</Link></li>
         <li><Link to="/portfolio" className="page-link" onClick={this.handleMenuClick} >portfolio</Link></li>
         <li><Link to="/skills" className="page-link" onClick={this.handleMenuClick} >labs</Link></li>
       </div>
 
     		<li><Link to="/home" className="page-link" onClick={this.handleClick.bind(this, '/home')} >Home</Link></li>
-    		<li><Link to="/about" className="page-link" onClick={this.handleClick.bind(this, 'about')} >stalk</Link></li>
+    		<li><Link to="/about" className="page-link" onClick={this.handleClick.bind(this, 'about')} >Info</Link></li>
     		<li><Link to="/portfolio" className="page-link" onClick={this.handleClick.bind(this, 'portfolio')} >portfolio</Link></li>
     		<li><Link to="/skills" className="page-link" onClick={this.handleClick.bind(this, 'skills')} >labs</Link></li>
     	</ul>
 
-    </div>;
+    </header>;
   }
 });
 
-export default Header;  
-
-
+export default Header;

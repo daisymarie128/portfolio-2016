@@ -1,5 +1,5 @@
 
-/* ----------- 
+/* -----------
 
 	SKILLS COLLECTION STYLES
 
@@ -43,6 +43,10 @@
 		    background: black;
     	}
     }
+		p {
+			margin: 21px 0 0 0 !important;
+			font-size: 0.8rem !important;
+		}
 	}
 	.skill-item:after {
 	  content: '';
@@ -70,7 +74,7 @@
 	}
 }
 
-/* ----------- 
+/* -----------
 
 	INDIVIDUAL SKILL PAGE
 
@@ -164,7 +168,7 @@
 		h2 {
 			position: relative;
 			margin: 1.5rem 0;
-			width: 100%; 
+			width: 100%;
 			font-weight: 100;
 			&:after {
 				content: ' ';
@@ -172,7 +176,7 @@
 				left: 0;
 				bottom: -5px;
 				background: black;
-				width: 100%; 
+				width: 100%;
 				height: 3px;
 			}
 		}
@@ -217,19 +221,19 @@
 
 
 
-/* ----------- 
+/* -----------
 
 	MEDIA QURIES
 
 	----------- */
 
 
-/* ----------- 
+/* -----------
 	***TABLETS***
 	----------- */
 @media screen and (min-width: 750px) {
-	
-	/* ----------- 
+
+	/* -----------
 		SKILLS COLLECTION STYLES
 	----------- */
 
@@ -240,11 +244,14 @@
 			height: 130px;
 			margin: 20px 30px 0 0;
 			display: inline-block;
-		}
 
+			p {
+				margin: 14px 0 0 0 !important;
+			}
+		}
 	}
 
-	/* ----------- 
+	/* -----------
 		INDIVIDUAL SKILL PAGE
 	----------- */
 
@@ -256,7 +263,7 @@
 			margin-left: 35%;
 		}
 
-		
+
 		.image-holder {
 			display: inline-block;
 			// height: 130px;
@@ -300,7 +307,7 @@
 
 };
 
-/* ----------- 
+/* -----------
 	***LAPTOPS***
 	----------- */
 @media screen and (min-width: 900px) {
@@ -311,7 +318,7 @@
 
 	}
 
-		/* ----------- 
+		/* -----------
 
 		INDIVIDUAL SKILL PAGE
 
@@ -321,4 +328,3 @@
 		margin-left: 35%;
 	}
 };
-

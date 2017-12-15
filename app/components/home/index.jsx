@@ -5,7 +5,7 @@ import './index.scss';
 
 var renderer, camera, scene, requestId;
 
-const Home = React.createClass({ 
+const Home = React.createClass({
 
 	getInitialState() {
     return {
@@ -14,14 +14,10 @@ const Home = React.createClass({
 	},
 
   componentDidMount(){
-
   	window.addEventListener('resize', this.handleResize);
-
   	var sideQuote = document.getElementsByClassName('side-quote-text')[0];
     sideQuote.innerHTML = "Daisy Smith Creative Coder";
    	this.initThree();
-  	
-
   },
 
   initThree() {
@@ -29,20 +25,17 @@ const Home = React.createClass({
   	/* ----------------------------
 		threejs code
 		------------------------------------ */
-
 		var self = this;
-
-
 		var container,
 		    composer,
-		    color, 
+		    color,
 		    geometry,
 		    material,
 		    amount,
 		    cooordinates,
 		    object,
 		    sphere,
-		    glitchPass, 
+		    glitchPass,
 		    light;
 		var uniforms;
 
@@ -54,37 +47,12 @@ const Home = React.createClass({
 		  // set up my sphere coordinates
 		  cooordinates = [
 		    {
-		      x: -30,
-		      y: 20,
-		      z: 25
-		    },
-		    {
-		      x: 100,
-		      y: 20,
+		      x: 0,
+		      y: -10,
 		      z: 30
-		    },
-		    {
-		      x: 5,
-		      y: -60,
-		      z: 20
-		    },
-		    {
-		      x: 30,
-		      y: -170,
-		      z: 10
-		    },
-		    {
-		      x: 160,
-		      y: 160,
-		      z: -5
-		    },
-		    {
-		      x: 15,
-		      y: 100,
-		      z: 15
 		    }
 		  ];
-		    
+
 		    container = document.getElementById( 'home-page' );
 		    camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 100000 );
 		    camera.position.z = 400;
@@ -93,11 +61,9 @@ const Home = React.createClass({
 
 		    renderer = new THREE.WebGLRenderer();
 		    renderer.setPixelRatio( window.devicePixelRatio );
-		    renderer.setSize( window.innerWidth, window.innerHeight );
+		    renderer.setSize(window.innerWidth, window.innerHeight);
 
 		    object = new THREE.Object3D();
-
-		    // self is the amount of spheres we want
 		    color = new THREE.Color( 0xff0000 );
 		    geometry = new THREE.SphereGeometry( 70, 100, 100 );
 
@@ -108,7 +74,6 @@ const Home = React.createClass({
 
 		    var bumpTexture = new THREE.TextureLoader().load( "/assets/shader-images/water-texture.jpg" );
 		    var colorTexture = new THREE.TextureLoader().load( "/assets/shader-images/rainbow.jpg" );
-
 
 		    uniforms = {
 		        u_time: { type: "f", value: 1.0 },
@@ -126,22 +91,20 @@ const Home = React.createClass({
 
 		    material.uniforms.colorMap.value.wrapS = THREE.ClampToEdgeWrapping;
 		    material.uniforms.colorMap.value.wrapT = THREE.ClampToEdgeWrapping;
-		    
+
 
 		    sphere = new THREE.Mesh( geometry, material );
 
 		    for (var i = 0; i < cooordinates.length; i++) {
-
-		        var clone = sphere.clone();
-		        clone.position.x = cooordinates[i].x;
-		        clone.position.y = cooordinates[i].y;
-		        clone.position.z = cooordinates[i].z;
-		        clone.rotation.x = cooordinates[i].x;
-		        clone.rotation.z = cooordinates[i].z;
-		        var scale = clone.position.z / 50 * 3.0;
-		        clone.scale.set( scale, scale, scale );
-
-		        scene.add( clone );
+	        var clone = sphere.clone();
+	        clone.position.x = cooordinates[i].x;
+	        clone.position.y = cooordinates[i].y;
+	        clone.position.z = cooordinates[i].z;
+	        clone.rotation.x = cooordinates[i].x;
+	        clone.rotation.z = cooordinates[i].z;
+	        var scale = clone.position.z * .09;
+	        clone.scale.set( scale, scale, scale );
+	        scene.add( clone );
 		    };
 
 		    renderer.setClearColor(0xffffff, 1);
@@ -204,10 +167,9 @@ const Home = React.createClass({
 
   render() {
     return <div id="home-page">
+			<h4>DEVELOPER<br/>ANIMATOR<br/>FOOL</h4>
     </div>;
   }
 });
 
-export default Home;  
-
-
+export default Home;

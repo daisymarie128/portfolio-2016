@@ -86,7 +86,7 @@ const App = React.createClass({
   },
 
   handleClick() {
-    
+
   },
 
   routerWillLeave() {
@@ -101,7 +101,7 @@ const App = React.createClass({
           {this.props.children}
           </div>
         <div className="side-quote">
-          <p className="side-quote-text">"yep, i needed a whole new page to show you this"</p>
+          <h1 className="side-quote-text">"yep, i needed a whole new page to show you this"</h1>
         </div>
         <Footer />
       </div>
@@ -128,6 +128,3 @@ render((
     </Route>
   </Router>
 ), document.getElementById('container'))
-
-
-
