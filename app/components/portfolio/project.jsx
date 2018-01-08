@@ -29,6 +29,7 @@ const Project = React.createClass({
       _this.setState({
         currentProjects: current
       });
+      console.log('------ im here: ', id)
     });
   },
 
